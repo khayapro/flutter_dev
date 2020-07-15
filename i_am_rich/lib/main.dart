@@ -11,8 +11,7 @@ void main() {
           ),
           body: Center(
             child: Image(
-              image: NetworkImage(
-                  'https://img.favpng.com/15/17/20/blue-diamond-blue-diamond-png-favpng-KJupy4TMbyyyz7JF5ghUYy7Vf.jpg'),
+              image: AssetImage('assets/images/diamond.png'),
             ),
           )),
     ),
