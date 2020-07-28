@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Colors.grey,
+                color: Colors.white,
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
                 child: Row(
@@ -47,15 +47,36 @@ class MyApp extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.phone,
-                      color: Colors.white,
+                      color: Colors.teal,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Text(
                       "+27 72 123 4574",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.teal, fontSize: 18),
                     )
+                  ],
+                ),
+              ),
+              Container(
+                color: Colors.white,
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "flutter-dev-sample@gmail.com",
+                      style: TextStyle(fontSize: 18, color: Colors.teal),
+                    ),
                   ],
                 ),
               ),
