@@ -54,7 +54,11 @@ class MyApp extends StatelessWidget {
                     ),
                     Text(
                       "+27 72 123 4574",
-                      style: TextStyle(color: Colors.teal, fontSize: 18),
+                      style: TextStyle(
+                        color: Colors.teal,
+                        fontSize: 20,
+                          fontFamily: "SourceSansPro",
+                      ),
                     )
                   ],
                 ),
@@ -75,7 +79,11 @@ class MyApp extends StatelessWidget {
                     ),
                     Text(
                       "flutter-dev-sample@gmail.com",
-                      style: TextStyle(fontSize: 18, color: Colors.teal),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.teal,
+                        fontFamily: "SourceSansPro",
+                      ),
                     ),
                   ],
                 ),
