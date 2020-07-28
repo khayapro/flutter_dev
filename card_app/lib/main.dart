@@ -38,6 +38,13 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'SourceSansPro',
                 ),
               ),
+              SizedBox(
+                height: 30,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
               Card(
                 color: Colors.white,
                 margin: EdgeInsets.all(10),
@@ -87,22 +94,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-//
-//Row(
-//mainAxisAlignment: MainAxisAlignment.center,
-//children: [
-//
-//SizedBox(
-//width: 10,
-//),
-//Text(
-//"flutter-dev-sample@gmail.com",
-//style: TextStyle(
-//fontSize: 20,
-//color: Colors.teal,
-//fontFamily: "SourceSansPro",
-//),
-//),
-//],
-//),
