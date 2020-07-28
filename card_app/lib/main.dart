@@ -38,46 +38,38 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'SourceSansPro',
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
-                padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: ListTile(
+                    leading: Icon(
                       Icons.phone,
                       color: Colors.teal,
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "+27 72 123 4574",
+                    title: Text(
+                      "+ 27 72 123 4574",
                       style: TextStyle(
                         color: Colors.teal,
                         fontSize: 20,
-                          fontFamily: "SourceSansPro",
+                        fontFamily: "SourceSansPro",
                       ),
-                    )
-                  ],
+                    ),
+                  ),
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
-                padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: ListTile(
+                    leading: Icon(
                       Icons.email,
                       color: Colors.teal,
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
+                    title: Text(
                       "flutter-dev-sample@gmail.com",
                       style: TextStyle(
                         fontSize: 20,
@@ -85,7 +77,7 @@ class MyApp extends StatelessWidget {
                         fontFamily: "SourceSansPro",
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],
@@ -95,3 +87,22 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//
+//Row(
+//mainAxisAlignment: MainAxisAlignment.center,
+//children: [
+//
+//SizedBox(
+//width: 10,
+//),
+//Text(
+//"flutter-dev-sample@gmail.com",
+//style: TextStyle(
+//fontSize: 20,
+//color: Colors.teal,
+//fontFamily: "SourceSansPro",
+//),
+//),
+//],
+//),
