@@ -54,6 +54,7 @@ class RandomWordsState extends State<RandomWords> {
 
   Widget _buildRow(WordPair suggestion) {
     return ListTile(
+      trailing: Icon(Icons.panorama_fish_eye),
       title: Text(
         suggestion.asPascalCase,
         style: _biggerFontStyle,
