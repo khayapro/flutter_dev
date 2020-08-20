@@ -13,10 +13,13 @@ class XylophoneApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Xylophone Player"),
+          backgroundColor: Colors.black,
         ),
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               buildSoundButton(sound: "note1.wav", color: Colors.red),
               buildSoundButton(sound: "note2.wav", color: Colors.orange),
@@ -32,13 +35,15 @@ class XylophoneApp extends StatelessWidget {
     );
   }
 
-  FlatButton buildSoundButton({final String sound, final MaterialColor color}) {
-    return FlatButton(
-      onPressed: () {
-        playSound(sound);
-      },
-      child: Text(""),
-      color: color,
+  Expanded buildSoundButton({final String sound, final MaterialColor color}) {
+    return Expanded(
+      child: FlatButton(
+        onPressed: () {
+          playSound(sound);
+        },
+        child: Icon(Icons.music_note, color: Colors.white, size: 40,),
+        color: color,
+      ),
     );
   }
 
