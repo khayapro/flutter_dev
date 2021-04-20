@@ -5,10 +5,16 @@ void main() {
 }
 
 class App extends StatelessWidget {
-
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text('Hello Flutters'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('App Header Title'),
+        ),
+        body: Center(
+          child: Text('Hello Center!!'),
+        ),
+      ),
     );
   }
 }
