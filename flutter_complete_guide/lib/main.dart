@@ -4,8 +4,26 @@ void main() {
   runApp(App());
 }
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    return AppState();
+  }
+}
+
+class AppState extends State<App> {
+
+  var questionCount = 0;
+
   Widget build(BuildContext context) {
+
+    var questions = [
+      'Whats your favourite country?',
+      'Whats your favourite city?',
+      'Have been tested for Covid-19 - LOL?'
+    ];
+
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
@@ -14,22 +32,30 @@ class App extends StatelessWidget {
           body: Center(
             child: Column(
               children: [
-                Text('Whats your favourite color?'),
+                Text(questions[questionCount]),
                 RaisedButton(
                   child: Text('Answer 1'),
-                  onPressed: () => print('Button1 clicked! '),
+                  onPressed: questionAnswer,
                 ),
                 RaisedButton(
                   child: Text('Answer 2'),
-                  onPressed: () => print('Button2 clicked! '),
+                  onPressed: questionAnswer,
                 ),
                 RaisedButton(
                   child: Text('Answer 2'),
-                  onPressed: () => print('Button3 clicked! '),
+                  onPressed: questionAnswer,
                 ),
               ],
             ),
           )),
     );
   }
+
+  void questionAnswer() {
+    setState(() {
+      questionCount++;
+    });
+    print('questionCount value: $questionCount');
+  }
+
 }
