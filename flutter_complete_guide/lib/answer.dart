@@ -3,8 +3,8 @@ import 'dart:core';
 
 class Answer extends StatelessWidget {
 
-  final Function invokeFunction;
-
+  final void Function() invokeFunction;
+  
   Answer(this.invokeFunction);
 
   @override
