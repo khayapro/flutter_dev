@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'question.dart';
+
 void main() {
   runApp(App());
 }
@@ -8,17 +10,17 @@ class App extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return AppState();
+    return _AppState();
   }
 }
 
-class AppState extends State<App> {
+class _AppState extends State<App> {
 
-  var questionCount = 0;
+  var _questionCount = 0;
 
   Widget build(BuildContext context) {
 
-    var questions = [
+    var _questions = [
       'Whats your favourite country?',
       'Whats your favourite city?',
       'Have been tested for Covid-19 - LOL?'
@@ -32,18 +34,18 @@ class AppState extends State<App> {
           body: Center(
             child: Column(
               children: [
-                Text(questions[questionCount]),
+                Question(_questions[_questionCount]),
                 RaisedButton(
                   child: Text('Answer 1'),
-                  onPressed: questionAnswer,
+                  onPressed: _questionAnswer,
                 ),
                 RaisedButton(
                   child: Text('Answer 2'),
-                  onPressed: questionAnswer,
+                  onPressed: _questionAnswer,
                 ),
                 RaisedButton(
                   child: Text('Answer 2'),
-                  onPressed: questionAnswer,
+                  onPressed: _questionAnswer,
                 ),
               ],
             ),
@@ -51,11 +53,15 @@ class AppState extends State<App> {
     );
   }
 
-  void questionAnswer() {
+  void _questionAnswer() {
     setState(() {
-      questionCount++;
+      if (_questionCount < 2) {
+        _questionCount++;
+      } else {
+        _questionCount = 0;
+      }
     });
-    print('questionCount value: $questionCount');
+    print('questionCount value: $_questionCount');
   }
 
 }
