@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:core';
 
-class Answer extends StatelessWidget {
+class AnswerButton extends StatelessWidget {
 
   final void Function() invokeFunction;
   
-  Answer(this.invokeFunction);
+  AnswerButton(this.invokeFunction);
 
   @override
   Widget build(BuildContext context) {

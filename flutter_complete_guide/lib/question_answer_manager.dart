@@ -4,14 +4,11 @@ import 'answer.dart';
 import 'question.dart';
 
 class QuestionAnswerManager extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _QuestionAnswerManagerState();
   }
-}
-
-void function () {
-
 }
 
 class _QuestionAnswerManagerState extends State<QuestionAnswerManager> {
@@ -44,9 +41,9 @@ class _QuestionAnswerManagerState extends State<QuestionAnswerManager> {
           child: Column(
             children: [
               Question(_questions[_questionCount]),
-              Answer(_questionAnswer),
-              Answer(_questionAnswer),
-              Answer(_questionAnswer),
+              AnswerButton(_questionAnswer),
+              AnswerButton(_questionAnswer),
+              AnswerButton(_questionAnswer),
             ],
           ),
         ),
