@@ -4,8 +4,9 @@ import 'dart:core';
 class AnswerButton extends StatelessWidget {
 
   final void Function() invokeFunction;
+  final String answerText;
   
-  AnswerButton(this.invokeFunction);
+  AnswerButton(this.invokeFunction, this.answerText);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class AnswerButton extends StatelessWidget {
         style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Colors.teal.shade500),
         ),
-        child: Text('Answer 1'),
+        child: Text(this.answerText),
         onPressed: invokeFunction,
       ),
     );

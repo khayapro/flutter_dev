@@ -4,7 +4,6 @@ import 'answer.dart';
 import 'question.dart';
 
 class QuestionAnswerManager extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return _QuestionAnswerManagerState();
@@ -27,9 +26,18 @@ class _QuestionAnswerManagerState extends State<QuestionAnswerManager> {
 
   Widget build(BuildContext context) {
     var _questions = [
-      'Whats your favourite country?',
-      'Whats your favourite city?',
-      'Have been tested for Covid-19 - LOL?'
+      {
+        'question': 'Whats your favourite color?',
+        'answers': ['Green', 'Black', 'Blue', 'Brown'],
+      },
+      {
+        'question': 'Whats your favourite country?',
+        'answers': ['South Africa', 'America', 'Germany', 'Brazil'],
+      },
+      {
+        'question': 'Whats your favourite Planet?',
+        'answers': ['Mars', 'Earth', 'Jupiter', 'Venus'],
+      }
     ];
 
     return MaterialApp(
@@ -40,10 +48,11 @@ class _QuestionAnswerManagerState extends State<QuestionAnswerManager> {
         body: Center(
           child: Column(
             children: [
-              Question(_questions[_questionCount]),
-              AnswerButton(_questionAnswer),
-              AnswerButton(_questionAnswer),
-              AnswerButton(_questionAnswer),
+              Question('${_questions[_questionCount]['question']}'),
+              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
+              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
+              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
+              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
             ],
           ),
         ),
