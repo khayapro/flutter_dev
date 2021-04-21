@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'answer.dart';
-import 'question.dart';
+import 'quiz.dart';
 
 class QuestionAnswerManager extends StatefulWidget {
   @override
@@ -12,48 +12,46 @@ class QuestionAnswerManager extends StatefulWidget {
 
 class _QuestionAnswerManagerState extends State<QuestionAnswerManager> {
   var _questionCount = 0;
+  final _questions = const [
+    {
+      'question': 'Whats your favourite color?',
+      'answers': ['Green', 'Black', 'Blue', 'Brown'],
+    },
+    {
+      'question': 'Whats your favourite country?',
+      'answers': ['South Africa', 'America', 'Germany', 'Brazil'],
+    },
+    {
+      'question': 'Whats your favourite Planet?',
+      'answers': ['Mars', 'Earth', 'Jupiter', 'Venus'],
+    }
+  ];
 
   void _questionAnswer() {
     setState(() {
-      if (_questionCount < 2) {
+      if (_questionCount < _questions.length) {
         _questionCount++;
-      } else {
-        _questionCount = 0;
       }
     });
     print('questionCount value: $_questionCount');
   }
 
-  Widget build(BuildContext context) {
-    var _questions = [
-      {
-        'question': 'Whats your favourite color?',
-        'answers': ['Green', 'Black', 'Blue', 'Brown'],
-      },
-      {
-        'question': 'Whats your favourite country?',
-        'answers': ['South Africa', 'America', 'Germany', 'Brazil'],
-      },
-      {
-        'question': 'Whats your favourite Planet?',
-        'answers': ['Mars', 'Earth', 'Jupiter', 'Venus'],
-      }
-    ];
+  void _resetQuestionCount() {
+    setState(() {
+      this._questionCount = 0;
+    });
+  }
 
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('App Header Title'),
         ),
         body: Center(
-          child: Column(
-            children: [
-              Question('${_questions[_questionCount]['question']}'),
-              //spread this into children's list of widgets
-              ...(_questions[_questionCount]['answers'] as List<String>)
-                  .map((e) => AnswerButton(_questionAnswer, e)).toList()
-            ],
-          ),
+          child: _questionCount < _questions.length
+              ? Quiz(_questions[_questionCount], _questionAnswer)
+              : AnswerButton(_resetQuestionCount, 'Finished, Press to Reset'),
         ),
       ),
     );
