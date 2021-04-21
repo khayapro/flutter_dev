@@ -49,10 +49,9 @@ class _QuestionAnswerManagerState extends State<QuestionAnswerManager> {
           child: Column(
             children: [
               Question('${_questions[_questionCount]['question']}'),
-              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
-              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
-              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
-              AnswerButton(_questionAnswer, '${_questions[_questionCount]['answers']}'),
+              //spread this into children's list of widgets
+              ...(_questions[_questionCount]['answers'] as List<String>)
+                  .map((e) => AnswerButton(_questionAnswer, e)).toList()
             ],
           ),
         ),
