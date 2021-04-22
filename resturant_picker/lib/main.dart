@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +14,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final List<String> restaurants = const [
+  var _restaurantIndex = 0;
+
+  final List<String> _restaurants = const [
     "McDonal\'s",
     "Burger King",
     "Papachino\'s",
@@ -36,14 +40,34 @@ class _MyAppState extends State<MyApp> {
             children: [
               Text("What do you want to eat?"),
               Text(
-                "Hello Restaurant Picker!",
+                _restaurants[_restaurantIndex],
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
+              Padding(
+                padding: EdgeInsets.all(50),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.teal),
+                ),
+                onPressed: _picker,
+                child: Text(
+                  "Picker",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              )
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _picker() {
+    final random = Random().nextInt(_restaurants.length);
+    setState(() {
+      _restaurantIndex = random;
+    });
   }
 }
