@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(CalculatorApp());
 }
 
 class CalculatorApp extends StatefulWidget {
@@ -17,11 +17,13 @@ class CalculatorAppState extends State<CalculatorApp> {
         appBar: AppBar(
           title: Text("CalculatorApp"),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Total Amount"),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Total Amount"),
+            ],
+          ),
         ),
       ),
     );
