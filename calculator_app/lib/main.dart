@@ -10,6 +10,8 @@ class CalculatorApp extends StatefulWidget {
 }
 
 class CalculatorAppState extends State<CalculatorApp> {
+  final inputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +24,12 @@ class CalculatorAppState extends State<CalculatorApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Total Amount"),
+              TextField(
+                controller: inputController,
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(hintText: "R 2000.00"),
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              ),
             ],
           ),
         ),
