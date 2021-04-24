@@ -21,7 +21,8 @@ class _MyAppState extends State<MyApp> {
     "Burger King",
     "Papachino\'s",
     "Pizza Hut",
-    "Steers"
+    "Steers",
+    "Spurs"
   ];
 
   @override
