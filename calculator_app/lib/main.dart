@@ -36,6 +36,14 @@ class CalculatorAppState extends State<CalculatorApp> {
                       color: Colors.teal.shade400),
                 ),
               ),
+              SizedBox(
+                width: 200,
+                height: 200,
+                child: Card(
+                  color: Colors.teal,
+                  child: Center(child: Text("Display Sized Box Center")),
+                ),
+              ),
               Text("Total Amount"),
               SizedBox(
                 width: 70,
