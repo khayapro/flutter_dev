@@ -9,6 +9,7 @@ class CalculatorApp extends StatefulWidget {
   State<StatefulWidget> createState() => CalculatorAppState();
 }
 
+
 class CalculatorAppState extends State<CalculatorApp> {
   final inputController = TextEditingController();
   final List<bool> _tipSelection = [true, false, false];
