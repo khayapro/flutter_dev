@@ -9,12 +9,11 @@ class CalculatorApp extends StatefulWidget {
   State<StatefulWidget> createState() => CalculatorAppState();
 }
 
-
+//something to test...
 class CalculatorAppState extends State<CalculatorApp> {
   final inputController = TextEditingController();
   final List<bool> _tipSelection = [true, false, false];
   var _tipAmount = "0";
-
 
   @override
   Widget build(BuildContext context) {
@@ -87,10 +86,8 @@ class CalculatorAppState extends State<CalculatorApp> {
     final selectedIndex = _tipSelection.indexWhere((element) => element);
     final tipPercentage = [0.1, 0.15, 0.20][selectedIndex];
 
-
     setState(() {
       _tipAmount = "R ${totalAmount * tipPercentage}";
     });
-
   }
 }
